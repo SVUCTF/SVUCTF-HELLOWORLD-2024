@@ -19,5 +19,5 @@ if ($userAgent !== "svuctf") {
     exit;
 }
 
-echo "flag在小饼干里!";
 setcookie("flag", file_get_contents("/flag"));
+echo "flag在小饼干里!";
