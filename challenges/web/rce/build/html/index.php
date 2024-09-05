@@ -2,5 +2,6 @@
 
 highlight_file(__FILE__);
 
-$rce = $_GET['rce'];
-eval($rce);
+if (isset($_GET['rce'])) {
+    eval($_GET['rce']);
+}
