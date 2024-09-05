@@ -1,16 +1,23 @@
 <?php
 
-if (strpos($_SERVER['HTTP_X_FORWARDED_FOR'], "127") === 0) {
-    if ($_SERVER["HTTP_REFERER"] === "genshin.edu.cn") {
-        if ($_SERVER["HTTP_USER_AGENT"] === "svuctf") {
-            echo "flag在小饼干里!";
-            setcookie("flag", file_get_contents("/flag"));
-        } else {
-            echo "请使用 svuctf 浏览器!";
-        }
-    } else {
-        echo "不是 genshin.edu.cn 来的我不要";
-    }
-} else {
+$forwardedFor = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? null;
+$referer = $_SERVER["HTTP_REFERER"] ?? null;
+$userAgent = $_SERVER["HTTP_USER_AGENT"] ?? null;
+
+if ($forwardedFor === null || strpos($forwardedFor, "127") !== 0) {
     echo "必须从本地访问!";
+    exit;
 }
+
+if ($referer !== "genshin.edu.cn") {
+    echo "不是 genshin.edu.cn 来的我不要";
+    exit;
+}
+
+if ($userAgent !== "svuctf") {
+    echo "请使用 svuctf 浏览器!";
+    exit;
+}
+
+echo "flag在小饼干里!";
+setcookie("flag", file_get_contents("/flag"));
