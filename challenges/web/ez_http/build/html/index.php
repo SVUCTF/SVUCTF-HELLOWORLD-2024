@@ -1,6 +1,6 @@
 <?php
 
-if (strpos($_SERVER['REMOTE_ADDR'], "127") === 0) {
+if (strpos($_SERVER['HTTP_X_FORWARDED_FOR'], "127") === 0) {
     if ($_SERVER["HTTP_REFERER"] === "genshin.edu.cn") {
         if ($_SERVER["HTTP_USER_AGENT"] === "svuctf") {
             echo "flag在小饼干里!";
