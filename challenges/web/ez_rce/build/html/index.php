@@ -2,8 +2,9 @@
 
 highlight_file(__FILE__);
 
-$rce = $_GET['rce'];
-if (preg_match("/flag|\\s/im", $rce)) {
-    die("hacker!");
+if (isset($_GET["rce"])) {
+    if (preg_match("/flag|\\s/im", $_GET['rce'])) {
+        die("hacker!");
+    }
+    eval($_GET['rce']);
 }
-eval($rce);
