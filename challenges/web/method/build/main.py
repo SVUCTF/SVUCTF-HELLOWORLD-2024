@@ -7,7 +7,7 @@ FLAG = os.getenv("GZCTF_FLAG", "flag{00000000-0000-0000-0000-000000000000}")
 ALLOWED_METHODS = ["GET", "POST", "PUT", "DELETE", "OPTIONS", "SVUCTF"]
 
 # 假设 Flag 格式为 flag{UUID}，总长度足够
-part_length = len(FLAG) // len(ALLOWED_METHODS) + 1
+part_length = len(FLAG) // len(ALLOWED_METHODS)
 FLAG_PARTS = {
     method: (i + 1, FLAG[i * part_length : (i + 1) * part_length])
     for i, method in enumerate(ALLOWED_METHODS)
