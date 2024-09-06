@@ -17,18 +17,27 @@ FLAG_PARTS = {
 @app.route("/", methods=ALLOWED_METHODS)
 def challenge():
     method = request.method
+
     if method in ALLOWED_METHODS:
         part_number, flag_part = FLAG_PARTS[method]
-        if method == "OPTIONS":
-            response = make_response(f"这是 Flag 的第 {part_number} 部分：{flag_part}")
-            response.headers["Allow"] = ", ".join(ALLOWED_METHODS)
-            return response
+
+        response = f"这是 Flag 的第 {part_number} 部分：{flag_part}"
+
+        if method == "GET":
+            response += f"<br>提示：完整的 flag 分为 {len(FLAG_PARTS)} 个部分，每个部分需要使用不同的 HTTP 方法获取。"
+            response += "<br>已知的 HTTP 方法有：GET、POST、PUT、DELETE、OPTIONS，以及一个自定义方法。"
+
+        elif method == "OPTIONS":
+            resp = make_response(response)
+            resp.headers["Allow"] = ", ".join(ALLOWED_METHODS)
+            return resp
+
         elif method == "SVUCTF":
-            return f"恭喜你找到了隐藏方法，这是第 {part_number} 部分：{flag_part}"
-        else:
-            return f"这是 Flag 的第 {part_number} 部分：{flag_part}"
+            response = "恭喜你找到了隐藏方法，" + response
+
+        return response
     else:
-        return "尝试不同的 HTTP 方法"
+        return "尝试不同的 HTTP 方法", 405
 
 
 if __name__ == "__main__":
