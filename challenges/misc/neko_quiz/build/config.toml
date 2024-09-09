@@ -1,0 +1,16 @@
+title = "猫咪问答"
+
+[[questions]]
+text = "我校一号门旁的体育中心曾有一家「华莱士」，后来中间的「莱」字因为种种原因去掉了，成了「华 士」，再后来它就关门了。你能找出在炸鸡店之前，那里开的是什么店吗？"
+points = 20
+hint = "填写店铺全名"
+answers = ["旺厨美食园"]
+
+[flag]
+env = "GZCTF_FLAG"
+file = "/flag"
+static_str = "flag{neko_quiz_static_flag}"
+
+[message]
+incorrect = "没有全部答对，不能给你 FLAG 哦。"
+correct = "🎉🎉🎉 $FLAG 🎉🎉🎉"
