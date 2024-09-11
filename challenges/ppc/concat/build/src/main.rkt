@@ -3,31 +3,40 @@
 (require "parser.rkt")
 (require "test-cases.rkt")
 
+(define parse-error-responses
+  '("语法都不对，做不来的事就别轻易说出口"
+    "连语法都会出错，有办法背负其他人的人生吗"
+    "没有人拜托你那样写语法，这是最后的警告"))
+
+(define incorrect-responses
+  '("连题目的要求听不进去，你这个人真是满脑子都想着自己呢"
+    "今后不要再和我扯上关系了"))
+
+(define (random-response responses)
+  (list-ref responses (random (length responses))))
+
 (define (run-challenge [test-cases test-cases])
   (if (null? test-cases)
-      (begin
-        (displayln "恭喜，你已经通过了所有测试。")
-        (display "Flag：")
-        (let ([flag (getenv "GZCTF_FLAG")])
-          (if flag
-              (displayln flag)
-              (displayln "错误：未找到 Flag 环境变量"))))
+      (let ([flag (getenv "GZCTF_FLAG")])
+        (if flag
+            (displayln flag)
+            (displayln "错误：未找到 Flag 环境变量")))
       (let* ([test-case (car test-cases)]
              [description (car test-case)]
-             [expected (cdr test-case)])
-        (printf "描述：~a\n" description)
-        (display "🐱> ")
+             [expected (cadr test-case)]
+             [response (caddr test-case)])
+        (printf "祥子：~a\n" description)
+        (display "soyo：")
         (with-handlers
             ([exn:fail?
               (lambda (_exn)
-                (displayln "解析错误"))])
+                (printf "祥子：~a\n" (random-response parse-error-responses)))])
           (let ([parsed (parse-concat-lang (read-line))])
             (if (equal? parsed expected)
                 (begin
-                  (displayln "正确")
-                  (displayln "--------------------")
+                  (printf "祥子：~a\n" response)
                   (run-challenge (cdr test-cases)))
                 (begin
-                  (displayln "不正确哦"))))))))
+                  (printf "祥子：~a\n" (random-response incorrect-responses)))))))))
 
 (run-challenge)
