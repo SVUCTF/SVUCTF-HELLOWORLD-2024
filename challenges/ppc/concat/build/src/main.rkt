@@ -3,6 +3,9 @@
 (require "parser.rkt")
 (require "test-cases.rkt")
 
+(file-stream-buffer-mode (current-input-port) 'none)
+(file-stream-buffer-mode (current-output-port) 'none)
+
 (define parse-error-responses
   '("语法都不对，做不来的事就别轻易说出口"
     "连语法都会出错，有办法背负其他人的人生吗"
@@ -35,6 +38,7 @@
             (if (equal? parsed expected)
                 (begin
                   (printf "祥子：~a\n" response)
+                  (displayln "------------------------------")
                   (run-challenge (cdr test-cases)))
                 (begin
                   (printf "祥子：~a\n" (random-response incorrect-responses)))))))))
