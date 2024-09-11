@@ -1,4 +1,4 @@
-#lang racket
+#lang racket/base
 
 (require "grammar.rkt")
 (require "tokenizer.rkt")
