@@ -12,6 +12,7 @@ env:
   TYPE: pwn
   NAME: srand
   BRANCH: pwn/srand
+  EXECUTABLE: /home/ctf/game
   REGISTRY: ghcr.io
 
 jobs:
