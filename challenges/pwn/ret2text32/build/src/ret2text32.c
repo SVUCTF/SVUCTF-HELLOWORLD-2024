@@ -22,7 +22,7 @@ void backdoor() {
 }
 
 void vuln() {
-    char buf[100];
+    char buf[128];
     printf("Program: Hey there! Think you can hack me?\n");
     printf("You: ");
     gets(buf);
