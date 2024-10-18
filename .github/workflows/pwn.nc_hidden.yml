@@ -2,7 +2,7 @@ name: Challenge 欸我 Flag 呢
 
 on:
   push:
-    branches: ["main", "pwn/nc_hidden"]
+    branches: ["main", "pwn/nc-hidden"]
     paths:
       - "!**/README.md"
       - "challenges/pwn/nc_hidden/build/**"
@@ -11,7 +11,7 @@ on:
 env:
   TYPE: pwn
   NAME: nc_hidden
-  BRANCH: pwn/nc_hidden
+  BRANCH: pwn/nc-hidden
   REGISTRY: ghcr.io
 
 jobs:
