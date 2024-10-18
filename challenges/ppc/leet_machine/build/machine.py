@@ -1,5 +1,4 @@
 import os
-import sys
 import random
 import time
 from faker import Faker
@@ -52,9 +51,9 @@ def play_round():
     if user_input == correct_leet:
         print("转换成功: 系统稳定性 +1")
         return True
-    else:
-        print(f"转换失败: 系统不稳定性增加")
-        return False
+
+    print("转换失败: 系统不稳定性增加")
+    return False
 
 
 def main():
@@ -78,7 +77,7 @@ def main():
             successful_conversions += 1
             print(f"系统状态: {successful_conversions}/100")
         else:
-            print(f"\n系统日志: 修复失败")
+            print("\n系统日志: 修复失败")
             print(f"系统日志: 仅完成 {successful_conversions}/100 次成功转换")
             print("系统日志: 进入紧急休眠模式")
             return
