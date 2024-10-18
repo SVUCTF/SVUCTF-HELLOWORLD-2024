@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Wpedantic -no-pie -m64
+CFLAGS = -Wall -Wextra -Wpedantic -no-pie -fno-stack-protector -m64
 
 TARGET = rop
 
