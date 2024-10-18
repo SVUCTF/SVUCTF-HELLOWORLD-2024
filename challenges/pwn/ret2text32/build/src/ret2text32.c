@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 void init() {
     setvbuf(stdin, NULL, _IONBF, 0);
@@ -24,9 +23,10 @@ void backdoor() {
 
 void vuln() {
     char buf[100];
-    puts("There is something amazing here, do you know anything?");
+    printf("Program: Hey there! Think you can hack me?\n");
+    printf("You: ");
     gets(buf);
-    puts("Maybe I will tell you next time !");
+    printf("Program: Hmm, I feel a bit strange...\n");
 }
 
 int main() {
