@@ -4,7 +4,7 @@ COPY frontend /app
 
 WORKDIR /app
 
-RUN yarn run build
+RUN yarn install && yarn run build
 
 FROM python:3.12-alpine
 
