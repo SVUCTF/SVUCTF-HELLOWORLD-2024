@@ -1,5 +1,5 @@
 ---
-title: Wireworld[Level0]
+title: Wireworld - LEVEL 0
 author: 作者名
 difficulty: Baby/Trivial/Easy/Normal/Medium/Hard/Expert/Insane
 category: Misc
