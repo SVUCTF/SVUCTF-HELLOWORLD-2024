@@ -3,7 +3,7 @@ title = "猫咪问答"
 return_score = true
 
 [[questions]]
-text = "SVUCTF 2023 年冬季赛中，全场一共提交多少次 Flag？其中多少次错误提交？"
+text = "在 SVUCTF 2023 年冬季赛中，全场一共提交多少次 Flag？其中多少次错误提交？"
 points = 25
 hint = "格式：提交次数_错误次数，使用下划线分隔。如：132_39"
 answers = ["78_41"]
