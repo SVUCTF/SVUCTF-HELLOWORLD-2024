@@ -2,7 +2,7 @@ name: Challenge NekoQuiz
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "misc/neko-quiz"]
     paths:
       - "!**/README.md"
       - "challenges/misc/neko_quiz/build/**"
