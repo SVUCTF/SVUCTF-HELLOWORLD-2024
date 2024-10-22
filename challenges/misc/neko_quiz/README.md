@@ -1,11 +1,16 @@
-# 猫咪问答
+---
+title: 猫咪问答
+author: 13m0n4de
+difficulty: Baby/Trivial/Easy/Normal/Medium/Hard/Expert/Insane
+category: Misc
+image:
+port: 3000
+writeup_author:
+tags:
+reference:
+---
 
-- 作者：13m0n4de
-- 参考：-
-- 难度：-
-- 分类：Misc
-- 镜像：-
-- 端口：-
+# 猫咪问答
 
 ## 题目描述
 
