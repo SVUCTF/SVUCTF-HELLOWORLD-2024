@@ -1,34 +1,32 @@
 <?php
 
+include("flag.php");
+
 highlight_file(__FILE__);
 
 class SVUCTF
 {
-    public $username;
-    public $password;
-    private $vip = false;
+    public $username = "admin";
+    public $password = "H3ll0_W0rld!";
+    public $vip = false;
 
-    public function __construct($username, $password)
+    public function login($u, $p)
     {
-        if ($username === "admin" && $password === "HELLOWORLD") {
+        if ($this->username === $u && $this->password === $p) {
             $this->vip = true;
         }
-        $this->username = $username;
-        $this->password = $password;
-    }
-
-    public function getFlag()
-    {
-        if ($this->vip) {
-            include 'flag.php';
-            echo $flag;
-        } else {
-            echo "Welcome to the SVUCTF, " . $this->username;
-        }
+        return $this->vip;
     }
 }
 
-if (isset($_GET["svu_u"]) && isset($_GET["svu_p"])) {
-    $svuctf = new SVUCTF($_GET["svu_u"], $_GET["svu_p"]);
-    $svuctf->getFlag();
+if (isset($_GET["username"]) && isset($_GET["password"])) {
+    $svu = new SVUCTF();
+    if ($svu->login($_GET["username"], $_GET["password"])) {
+        echo ("Welcome," . $svu->username);
+        echo ("</br>" . $flag);
+    } else {
+        echo ("you are not VIP!");
+    }
+} else {
+    echo ("input your params!");
 }
