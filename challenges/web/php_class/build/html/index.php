@@ -22,11 +22,11 @@ class SVUCTF
 if (isset($_GET["username"]) && isset($_GET["password"])) {
     $svu = new SVUCTF();
     if ($svu->login($_GET["username"], $_GET["password"])) {
-        echo ("Welcome," . $svu->username);
-        echo ("</br>" . $flag);
+        echo ("Welcome, " . $svu->username . ".<br>");
+        echo ("Flag: " . $flag);
     } else {
-        echo ("you are not VIP!");
+        echo ("You are not VIP!");
     }
 } else {
-    echo ("input your params!");
+    echo ("Input your params!");
 }
