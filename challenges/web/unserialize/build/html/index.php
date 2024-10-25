@@ -31,9 +31,8 @@ class C
     }
 }
 
-$data = $_POST['data'];
-if (isset($data)) {
-    unserialize($data);
+if (isset($_POST['data'])) {
+    unserialize($_POST['data']);
 } else {
     echo ("你参数呢?");
 }
