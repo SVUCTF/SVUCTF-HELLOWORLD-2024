@@ -1,6 +1,6 @@
 import random
 
-flag = "SVUCTF{po_xiao_yyds}"
+flag = "flag{po_xiao_yyds}"
 
 print("|原字符|目标字符|原二进制|目标二进制|差值|")
 print("|-|-|-|-|-|")
