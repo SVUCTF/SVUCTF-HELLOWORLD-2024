@@ -8,7 +8,7 @@ LEET_DICT = {"a": "4", "e": "3", "g": "6", "i": "1", "o": "0", "s": "5", "t": "7
 
 
 def convert_to_leet(sentence):
-    return "".join(LEET_DICT.get(char, char) for char in sentence.lower())
+    return "".join(LEET_DICT.get(char, char) for char in sentence)
 
 
 # 等待并通过初始提示

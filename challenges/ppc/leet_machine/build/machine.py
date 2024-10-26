@@ -25,7 +25,7 @@ def generate_random_sentence():
 
 
 def convert_to_leet(sentence):
-    return "".join(LEET_DICT.get(char, char) for char in sentence.lower())
+    return "".join(LEET_DICT.get(char, char) for char in sentence)
 
 
 def display_rules():
