@@ -8,7 +8,7 @@ Powered by GZCTF and GZTime
 
 ![poster](assets/poster.png)
 
-感谢 @liseihoka 帮助制作封面，封面潮得可怕
+感谢 [@liseihoka](https://github.com/liseihoka) 帮助制作封面，封面潮得可怕
 
 </div>
 
