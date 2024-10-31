@@ -3,7 +3,7 @@ title: Wireworld - LEVEL 1
 author: 13m0n4de
 difficulty: Trivial
 category: Misc
-image: ghcr.io/svuctf/svuctf-helloworld-2024/wireworld_level0:latest
+image: ghcr.io/svuctf/svuctf-helloworld-2024/wireworld_level1:latest
 port: 80
 writeup_author: 13m0n4de
 tags:
