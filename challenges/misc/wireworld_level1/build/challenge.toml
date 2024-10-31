@@ -1,0 +1,101 @@
+[meta]
+name = "Wireworld Challenge - LEVEL 1"
+description = """
+<p>还记得你在 LEVEL 0 制作的电路吗，它现在被整合成一个组件——时钟发生器。</p>
+<p>左右两侧的时钟发生器会先后射出电子，你需要<b>让右侧检测器收到左侧传来的电子，而左侧检测器收不到右侧传来的电子</b>。</p>
+"""
+
+[meta.cell_descriptions]
+EmptyCell = "空细胞，下一代保持不变。"
+ElectronHead = "电子头，下一代变成「电子尾」"
+ElectronTail = "电子尾，下一代变成「导体」"
+Conductor = "导体，当拥有一至两个「电子头」邻居时，下一代变成「电子头」，否则不变"
+
+[meta.component_descriptions]
+Detector = "检测器，用于检测电子数量、电子周期或电子流向的装置，用来判定挑战胜负"
+ClockGenerator = "时钟发生器，按固定周期在自身位置生成一个「电子头」"
+
+[grid]
+width = 15
+height = 15
+max_steps = 110
+
+[editable_area]
+x = 5
+y = 5
+width = 5
+height = 5
+
+[initial_state]
+cell_grid = [
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    ".####.....####.",
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    "..............."
+]
+
+component_grid = [
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    ".CX.........XC.",
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    "...............",
+    "..............."
+]
+
+[[components]]
+type = "ClockConfig"
+x = 1
+y = 7
+period = 4
+start_step = 0
+stop_step = 40
+
+[[components]]
+type = "ClockConfig"
+x = 13
+y = 7
+period = 4
+start_step = 60
+
+[[goals]]
+type = "ElectronFlowGoal"
+x = 2
+y = 7
+allowed_flows = ["LEFT_TO_RIGHT"]
+required_matches = 10
+forbidden_flows = ["RIGHT_TO_LEFT"]
+
+[[goals]]
+type = "ElectronFlowGoal"
+x = 12
+y = 7
+allowed_flows = ["LEFT_TO_RIGHT"]
+required_matches = 10
+
+[[goals]]
+type = "ElectronFlowGoal"
+x = 12
+y = 7
+allowed_flows = ["RIGHT_TO_LEFT"]
+required_matches = 10
