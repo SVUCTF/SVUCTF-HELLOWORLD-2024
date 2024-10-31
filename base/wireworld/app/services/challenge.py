@@ -134,7 +134,7 @@ class ChallengeService:
         )
         cls._setup_initial_state()
         for goal in cls.config.goals:
-            goal.current_matches = 0
+            goal.reset()
         cls.completed = False
 
     @classmethod

@@ -23,6 +23,9 @@ class Goal(BaseModel):
     def is_achieved(self) -> bool:
         return self.current_matches >= self.required_matches
 
+    def reset(self):
+        self.current_matches = 0
+
 
 class SpecificPeriodGoal(Goal):
     type: Literal["SpecificPeriodGoal"]
@@ -64,6 +67,10 @@ class ElectronFlowGoal(Goal):
 
     def is_achieved(self) -> bool:
         return not self.failed and self.current_matches >= self.required_matches
+
+    def reset(self):
+        self.current_matches = 0
+        self.failed = False
 
 
 GoalUnion = Union[SpecificPeriodGoal, ElectronFlowGoal]
