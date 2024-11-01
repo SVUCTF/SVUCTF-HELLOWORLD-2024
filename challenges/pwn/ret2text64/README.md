@@ -173,6 +173,8 @@ int b4ckd00r()
 
 ### 编写利用程序
 
+[exp.py](./writeup/exp.py):
+
 ```python
 from pwn import *
 
