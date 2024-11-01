@@ -2,7 +2,7 @@ name: Challenge PHP Class
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "web/php-class"]
     paths:
       - "!**/README.md"
       - "challenges/web/php_class/build/**"
