@@ -30,7 +30,7 @@ HTTP 请求主要包含以下几个部分：
 - 空行
 - 请求体：`POST` 请求会在这里携带数据
 
-更多信息可以查看[HTTP 消息](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Messages)。
+更多信息可以查看 [HTTP 消息](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Messages)。
 
 #### HTTP 请求方法
 
@@ -51,7 +51,7 @@ HTTP 请求主要包含以下几个部分：
 可以进行 HTTP 交互的工具有很多：
 
 - 浏览器开发者工具：一些浏览器的开发者工具具有编辑重发功能
-- [HackerBar](https://github.com/0140454/hackbar)：针对 Web 安全测试的浏览器扩展
+- [HackBar](https://github.com/0140454/hackbar)：针对 Web 安全测试的浏览器扩展
 - [Burp Suite](https://portswigger.net/burp)：专业的 Web 渗透测试工具
 - [Postman](https://www.postman.com/)：图形界面的 API 测试工具
 - 命令行工具：如 curl
@@ -78,9 +78,9 @@ http://<IP>:<PORT>/?svu=a
 $ curl "http://<IP>:<PORT>/?svu=a" -d "ctf=b" 
 ```
 
-使用 HackerBar：
+使用 HackBar：
 
-![hackerbar](./writeup/hackerbar.png)
+![hackbar](./writeup/hackbar.png)
 
 使用 Python：
 
