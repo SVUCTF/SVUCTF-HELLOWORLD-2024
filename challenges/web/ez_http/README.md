@@ -26,7 +26,7 @@ reference:
 
 在 Web 应用中，通常使用 `X-Forwarded-For` 请求头来标识请求的真实来源 IP。我们可以尝试这个头为 `127.0.0.1`：
 
-（如果你还不清楚如何发送 HTTP 请求，可以查看[Param](../param/README.md)题解中对于 HTTP 请求和相关工具的介绍）
+（如果你还不清楚如何发送 HTTP 请求，可以查看 [Param 题解 ](../param/README.md)中对于 HTTP 请求和相关工具的介绍）
 
 ```
 $ curl -H "X-Forwarded-For: 127.0.0.1" http://<IP>:<PORT>
