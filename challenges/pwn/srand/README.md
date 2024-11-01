@@ -5,7 +5,7 @@ difficulty: Trivial
 category: Pwn
 image: ghcr.io/svuctf/svuctf-helloworld-2024/srand:latest
 port: 70
-writeup_author:
+writeup_author: 13m0n4de
 tags:
   - pseudo_random
 reference:
